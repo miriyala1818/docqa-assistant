@@ -11,6 +11,7 @@ venv/
 
 # Generated / downloaded at runtime
 backend/models/
+/models/
 backend/data/index/
 backend/data/*.log
 *.log

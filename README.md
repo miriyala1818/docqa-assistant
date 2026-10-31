@@ -9,16 +9,48 @@ silently picking one, asks a clarifying question when the answer depends on the 
 It runs **fully offline on a CPU** (local ONNX models, no API key needed). If an Anthropic API key is set,
 Claude writes the answer wording, and every generated sentence is still checked against its cited passage.
 
-## Quick start (Windows PowerShell; macOS/Linux are the same without `.\`)
+## Getting started after downloading from GitHub
+
+**You need:** Python **3.10 or newer** ([python.org](https://www.python.org/downloads/); on Windows tick
+**"Add python.exe to PATH"** in the installer), about 1 GB of free disk space, and internet for the first run only.
+Git is optional.
+
+1. **Download the code:** on GitHub click **Code → Download ZIP** and unzip it, or
+   `git clone https://github.com/miriyala1818/docqa-assistant.git`.
+2. **Start it:**
+   - **Windows:** double-click **`run.bat`** in the project folder.
+   - **macOS / Linux:** in a terminal, `cd docqa-assistant`, then `bash run.sh`.
+   - **Manually (any OS):**
+     ```
+     cd docqa-assistant/backend
+     python -m pip install -r requirements.txt
+     python -m uvicorn app.api.server:app --port 8000
+     ```
+3. **Open http://localhost:8000.** The first start installs packages, downloads two small models (~110 MB, into
+   `backend/models/`) and indexes `knowledge_base/`. This takes 1-3 minutes; later starts take a few seconds.
+
+**Optional:** to have Claude write the answer wording, copy `.env.example` to `.env`, or set
+`ANTHROPIC_API_KEY` in your terminal before starting. Without it, everything works offline.
+
+**Troubleshooting**
+
+| Problem | Fix |
+|---|---|
+| `python` is not recognized | Install Python 3.10+ with "Add to PATH" ticked, then open a new terminal. On macOS/Linux use `python3`. |
+| `run.ps1 cannot be loaded because running scripts is disabled` | Use `run.bat` instead, or `powershell -ExecutionPolicy Bypass -File run.ps1`. |
+| `Address already in use` / port 8000 busy | `.\run.ps1 -Port 9000` or `PORT=9000 bash run.sh`, then open http://localhost:9000. |
+| Model download fails (offline / firewall / proxy) | Connect to the internet once; the models are then cached in `backend/models/`. |
+| `pip install` fails building a package | Use Python 3.10-3.12 (tested on 3.12) and upgrade pip: `python -m pip install --upgrade pip`. |
+
+## Quick start (if you already have the folder)
 
 ```powershell
 cd "D:\Microsoft VS Code\docqa-assistant"
 python -m pip install -r backend\requirements.txt
-.\run.ps1                       # or: cd backend; python -m uvicorn app.api.server:app --port 8000
+.\run.ps1                       # or: run.bat, or: cd backend; python -m uvicorn app.api.server:app --port 8000
 ```
 
-Open **http://localhost:8000**. The first start downloads two small models (~110 MB) into `models/` and
-indexes `knowledge_base/` (a few seconds). Interactive API docs are at http://localhost:8000/docs.
+Open **http://localhost:8000**. Interactive API docs are at http://localhost:8000/docs.
 
 Optional, to have Claude write the answers:
 

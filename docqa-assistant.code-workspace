@@ -1,0 +1,12 @@
+{
+  "folders": [
+    { "name": "docqa-assistant", "path": "." }
+  ],
+  "settings": {
+    "python.analysis.extraPaths": ["${workspaceFolder}/backend"],
+    "terminal.integrated.cwd": "${workspaceFolder}/backend"
+  },
+  "extensions": {
+    "recommendations": ["ms-python.python", "ms-python.debugpy"]
+  }
+}
