@@ -1,0 +1,25 @@
+<html><body style="font-family: sans-serif; font-size: 10.5pt;">
+<h1 style="font-size: 20pt;">Orbitly Administrator Handbook</h1>
+<p>Version 1.4 · Effective 1 February 2026 · Audience: workspace Owners and Admins</p>
+
+<h2 style="font-size: 15pt;">1. Roles and Permissions</h2>
+<p>Orbitly has four roles. The Owner has full control, including billing and deleting the workspace; each workspace has exactly one Owner, and ownership can be transferred. Admins manage members, integrations and security settings but cannot delete the workspace or change billing. Members create and edit projects they belong to. Guests can only view and comment on projects they are explicitly invited to, and are not counted as paid users.</p>
+
+<h2 style="font-size: 15pt;">2. Audit Logs</h2>
+<p>Audit logs record sign-ins, permission changes, exports and deletions. Audit logs are available on the Pro and Enterprise plans only. Pro workspaces retain audit logs for 90 days. Enterprise workspaces retain audit logs for 1 year. Admins can filter the log by member, event type and date, and export it as CSV from Settings &gt; Security &gt; Audit log.</p>
+
+<h2 style="font-size: 15pt;">3. Data Retention and Deletion</h2>
+<h3 style="font-size: 12.5pt;">3.1 After cancellation</h3>
+<p>When a subscription is cancelled, the workspace becomes read-only at the end of the paid period. Workspace data is retained for 30 days after cancellation so that you can export it or reactivate the subscription. After 30 days the data is permanently deleted and cannot be recovered.</p>
+<h3 style="font-size: 12.5pt;">3.2 Deleting a workspace</h3>
+<p>Only the Owner can delete a workspace, from Settings &gt; Workspace &gt; Delete workspace. A deleted workspace can be restored by the Owner within 7 days. After the 7-day recovery window, all projects, files and members are permanently removed.</p>
+
+<h2 style="font-size: 15pt;">4. Managing Members</h2>
+<h3 style="font-size: 12.5pt;">4.1 Removing a member</h3>
+<p>When someone leaves your organisation, remove them from Settings &gt; Members. Their tasks, comments and files stay in the workspace. Open tasks assigned to the removed person become unassigned, and Admins are prompted to reassign them to another member. The removed person immediately loses access and is no longer billed.</p>
+<h3 style="font-size: 12.5pt;">4.2 Automatic provisioning</h3>
+<p>Enterprise workspaces can provision and deprovision members automatically from their identity provider using SCIM. See the SSO Configuration Guide for setup steps.</p>
+
+<h2 style="font-size: 15pt;">5. Security Settings</h2>
+<p>Admins can require two-factor authentication for every member from Settings &gt; Security &gt; Enforce 2FA. When enforcement is turned on, members without 2FA are asked to set it up at their next sign-in and cannot use the workspace until they do. Enterprise workspaces can also restrict access to approved IP address ranges with IP allowlisting.</p>
+</body></html>

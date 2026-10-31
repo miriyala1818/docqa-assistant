@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SSO Configuration Guide</title>
+<meta name="version" content="1.2">
+<meta name="effective_date" content="2026-04-12">
+</head>
+<body>
+<nav><a href="/docs">Docs</a> &gt; <a href="/docs/admin">Administration</a> &gt; SSO</nav>
+<article>
+<h1 id="sso-guide">Configuring SAML Single Sign-On</h1>
+<p>Single sign-on (SSO) lets members sign in to Orbitly with their company identity provider instead of a separate password. SSO and SCIM provisioning are available on the Enterprise plan only.</p>
+
+<h2 id="supported-idps">Supported identity providers</h2>
+<p>Orbitly supports any SAML 2.0 identity provider. Tested configurations are available for Okta, Microsoft Entra ID (formerly Azure AD), Google Workspace and OneLogin.</p>
+
+<h2 id="setup-steps">Setting up SAML SSO</h2>
+<ol>
+<li>In Orbitly, open Settings &gt; Security &gt; Single sign-on and click Configure SAML.</li>
+<li>Copy the Assertion Consumer Service (ACS) URL and Entity ID shown by Orbitly.</li>
+<li>In your identity provider, create a new SAML application and paste the ACS URL and Entity ID.</li>
+<li>Download the identity provider's metadata XML file and upload it to Orbitly.</li>
+<li>Click Test connection and sign in with a test account.</li>
+<li>When the test succeeds, turn on Require SSO to make SSO mandatory for all members.</li>
+</ol>
+
+<h2 id="scim">Automatic provisioning with SCIM</h2>
+<p>SCIM provisioning creates, updates and deactivates Orbitly members automatically when they change in your identity provider. To enable it, open Settings &gt; Security &gt; SCIM, generate a SCIM token and paste the token and the SCIM base URL into your identity provider's provisioning settings.</p>
+
+<h2 id="sso-troubleshooting">Troubleshooting SSO</h2>
+<p>Error ORB-SSO-02 means the signing certificate in Orbitly does not match the identity provider certificate. Upload the latest metadata XML file to fix it. If members see "user not assigned", assign them to the Orbitly application in the identity provider.</p>
+</article>
+<footer>© 2026 Orbitly Inc. (fictional)</footer>
+</body>
+</html>

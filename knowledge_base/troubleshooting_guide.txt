@@ -1,0 +1,33 @@
+ORBITLY TROUBLESHOOTING GUIDE
+Version: 3.1
+Last updated: 2026-05-20
+
+This guide explains common error codes and problems and how to fix them.
+
+ERROR ORB-401: INVALID OR EXPIRED TOKEN
+
+The API key or session token sent with the request is invalid, revoked or expired. Create a new API key from Settings > Developer > API keys and update your integration. If you see this error in the web app, sign out and sign in again.
+
+ERROR ORB-429: TOO MANY REQUESTS
+
+You have exceeded the API rate limit or the daily API call quota for your plan. Wait for the number of seconds given in the Retry-After header (usually 60 seconds) before retrying. To avoid the error, reduce how often you call the API, combine requests into batches, and use webhooks instead of polling.
+
+ERROR ORB-503: SERVICE UNAVAILABLE
+
+Orbitly is temporarily unavailable, usually because of planned maintenance or an incident. Check the status page at status.orbitly.example for updates and retry after a few minutes.
+
+VERIFICATION EMAIL NOT RECEIVED
+
+Check your spam or junk folder first. Ask your IT team to allow emails from no-reply@orbitly.example. You can request a new verification email after 5 minutes from the sign-in page. Corporate email filters sometimes delay messages by up to 15 minutes.
+
+INTEGRATION SYNC FAILURES
+
+If an integration stops syncing, open Settings > Integrations, select the integration and click Reconnect. Sync failures usually happen when the person who connected the integration leaves the company or changes their password.
+
+SLOW DASHBOARD PERFORMANCE
+
+Dashboards with many widgets load slowly. Keep each dashboard under 20 widgets, use date filters to limit the data shown, and clear your browser cache. If the dashboard is still slow, try another supported browser.
+
+CANNOT UPLOAD FILES
+
+Uploads fail when the file is larger than the maximum upload size for your plan or when the workspace storage is full. Check the usage limits for your plan, delete unused files, or buy a storage add-on.

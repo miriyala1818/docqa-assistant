@@ -1,0 +1,62 @@
+{
+  "tuned_on": "dev split (eval/questions.json)",
+  "dev_summary": {
+    "n": 20,
+    "status_accuracy": 1.0,
+    "abstention_accuracy": 1.0,
+    "false_refusal_rate": 0.0,
+    "conflict_recall": 1.0,
+    "false_conflict_rate": 0.0,
+    "clarify_rate": 1.0,
+    "correctness": 1.0,
+    "citation_precision": 0.962,
+    "groundedness": 1.0,
+    "latency_p50_ms": 4.0,
+    "latency_p95_ms": 6.6
+  },
+  "thresholds": {
+    "nf_top": -1.0,
+    "sent_min": -1.0,
+    "sent_margin": 3.0,
+    "claim_min": -1.0,
+    "claim_margin": 4.0,
+    "clarify_margin": 1.0,
+    "max_units": 4
+  },
+  "grid": {
+    "nf_top": [
+      -4.0,
+      -3.0,
+      -2.0,
+      -1.0,
+      0.0,
+      1.0
+    ],
+    "sent_min": [
+      -3.0,
+      -2.0,
+      -1.0,
+      0.0
+    ],
+    "claim_min": [
+      -3.0,
+      -2.0,
+      -1.0
+    ],
+    "claim_margin": [
+      4.0,
+      6.0,
+      8.0
+    ],
+    "clarify_margin": [
+      1.0,
+      2.0,
+      4.0
+    ],
+    "max_units": [
+      3,
+      4
+    ]
+  },
+  "seconds": 146.3
+}

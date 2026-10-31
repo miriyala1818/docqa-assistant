@@ -1,0 +1,15 @@
+HOW TO EXPORT YOUR WORKSPACE DATA
+Support article KB-1042
+Last updated: 2026-02-10
+
+WHO CAN EXPORT
+
+Only the Owner and Admins can export workspace data.
+
+STARTING AN EXPORT
+
+Open Settings > Workspace > Export and choose what to include. Exports are available in CSV and JSON formats. Exports include projects, tasks, comments and member lists. Files and attachments are exported separately as a ZIP archive.
+
+DOWNLOADING LARGE EXPORTS
+
+Small exports download immediately. Large exports are prepared in the background and the download link is sent by email. The download link is valid for 7 days.

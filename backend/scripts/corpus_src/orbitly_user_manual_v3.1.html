@@ -1,0 +1,50 @@
+<html><body style="font-family: sans-serif; font-size: 10.5pt;">
+<h1 style="font-size: 20pt;">Orbitly User Manual</h1>
+<p>Version 3.1 · Effective 15 January 2026 · Applies to: all plans (Basic, Pro, Enterprise)</p>
+
+<h2 style="font-size: 15pt;">1. Getting Started</h2>
+<h3 style="font-size: 12.5pt;">1.1 Creating your workspace</h3>
+<p>A workspace is the top-level container for your organisation's projects, members and files. The person who creates the workspace becomes its Owner. To create a workspace, sign up at the Orbitly sign-up page, choose a workspace name and select a data region. You can rename the workspace at any time from Settings &gt; Workspace &gt; General.</p>
+<h3 style="font-size: 12.5pt;">1.2 Inviting team members</h3>
+<p>Owners and Admins can invite people from Settings &gt; Members &gt; Invite. Enter one or more email addresses, choose a role and click Send invitations. Invitations expire after 7 days; expired invitations can be re-sent from the Pending tab. Members can also join automatically if their email domain is on the workspace's approved domain list.</p>
+
+<h2 style="font-size: 15pt;">2. Account Access</h2>
+<h3 style="font-size: 12.5pt;">2.1 Signing in</h3>
+<p>Sign in with your work email and password, or with single sign-on if your administrator has configured it. Orbitly supports the latest two versions of Chrome, Edge, Firefox and Safari.</p>
+<h3 style="font-size: 12.5pt;">2.2 Resetting your password</h3>
+<p>If you have forgotten your password, follow these steps:</p>
+<ol>
+<li>On the sign-in page, click "Forgot password?".</li>
+<li>Enter the email address you use for Orbitly and click Send reset link.</li>
+<li>Open the reset email and click the link. The link is valid for 60 minutes.</li>
+<li>Choose a new password of at least 12 characters, including at least one number and one symbol.</li>
+<li>Sign in with the new password. All other active sessions are signed out automatically.</li>
+</ol>
+<p>If your workspace uses single sign-on, passwords are managed by your identity provider and must be reset there.</p>
+<h3 style="font-size: 12.5pt;">2.3 Account lockout</h3>
+<p>To protect against password guessing, an account is locked after 5 consecutive failed sign-in attempts. A locked account stays locked for 15 minutes. After the lockout period ends you can try again, or you can reset your password to unlock the account immediately. Admins can also unlock a member from Settings &gt; Members.</p>
+<h3 style="font-size: 12.5pt;">2.4 Two-factor authentication (2FA)</h3>
+<p>Two-factor authentication adds a second step to signing in. To enable it, open Profile &gt; Security &gt; Two-factor authentication and follow the prompts. Orbitly supports authenticator apps (TOTP) and hardware security keys (WebAuthn). SMS codes are not supported.</p>
+<p>When you enable 2FA you receive 10 one-time backup codes. Store them somewhere safe. If you lose the device with your authenticator app, sign in with a backup code, or ask a workspace Admin to reset your two-factor authentication.</p>
+<h3 style="font-size: 12.5pt;">2.5 Session timeout</h3>
+<p>For security, web sessions expire after 30 minutes of inactivity and you must sign in again. Sessions in the iOS and Android apps remain signed in for 30 days.</p>
+
+<h2 style="font-size: 15pt;">3. Workspace Configuration</h2>
+<h3 style="font-size: 12.5pt;">3.1 Time zone and language</h3>
+<p>Each member can set a personal time zone and interface language from Profile &gt; Preferences. Available languages are English, French, German, Spanish, Japanese and Hindi. Due dates are displayed in each member's own time zone.</p>
+<h3 style="font-size: 12.5pt;">3.2 Notifications</h3>
+<p>Members choose which events trigger notifications from Profile &gt; Notifications. Email digests can be sent daily or weekly. Quiet hours pause push notifications during the hours you choose.</p>
+<h3 style="font-size: 12.5pt;">3.3 Data region</h3>
+<p>The data region is selected when the workspace is created. Available regions are United States (Virginia), European Union (Frankfurt) and India (Mumbai). All workspace content is stored in the selected region. The data region cannot be changed after the workspace is created; Enterprise customers can contact support to request an assisted migration.</p>
+
+<h2 style="font-size: 15pt;">4. Integrations</h2>
+<p>Orbitly integrates natively with Slack, Microsoft Teams, Jira, GitHub, Google Drive and Salesforce. To connect an integration, open Settings &gt; Integrations, choose the tool and sign in to authorise access. Only Owners and Admins can add or remove integrations. Tools without a native integration can be connected through the REST API or outgoing webhooks.</p>
+
+<h2 style="font-size: 15pt;">5. API Access</h2>
+<h3 style="font-size: 12.5pt;">5.1 API keys</h3>
+<p>To create an API key, open Settings &gt; Developer &gt; API keys and click Create key. The key is shown only once, so copy it immediately. An API key has the same permissions as the member who created it. We recommend rotating keys every 90 days.</p>
+<h3 style="font-size: 12.5pt;">5.2 Rate limits</h3>
+<p>The Orbitly REST API allows 100 requests per minute per API key. Requests above the limit receive HTTP status 429 with error code ORB-429 and a Retry-After header that tells you how many seconds to wait.</p>
+<h3 style="font-size: 12.5pt;">5.3 Webhooks</h3>
+<p>Webhooks send an HTTP POST to your endpoint when events such as task.created or task.completed occur. Configure webhooks from Settings &gt; Developer &gt; Webhooks. Failed deliveries are retried up to 5 times with exponential backoff.</p>
+</body></html>

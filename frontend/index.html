@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DocQA Assistant</title>
+<link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>Enterprise Documentation Q&amp;A Assistant</h1>
+    <div class="sub">Answers only from your documents, and cites every claim</div>
+  </div>
+  <div class="spacer"></div>
+  <span class="badge" id="gen-badge"><span class="dot"></span><span>loading…</span></span>
+  <span class="badge" id="stats-badge">–</span>
+</header>
+<main>
+  <aside class="panel side">
+    <h2>Knowledge collection</h2>
+    <div id="docs"><div class="empty"><span class="spinner"></span></div></div>
+    <label class="drop" id="drop">
+      <input type="file" id="file" multiple accept=".pdf,.html,.htm,.md,.markdown,.txt">
+      <strong>Add documents</strong><br>Drop PDF, HTML, Markdown or TXT here, or click to choose files
+    </label>
+  </aside>
+  <section>
+    <div class="panel ask">
+      <form id="ask-form" autocomplete="off">
+        <input type="text" id="q" placeholder="Ask a question, e.g. How do I reset my password?" aria-label="Question">
+        <button class="primary" id="ask-btn" type="submit">Ask</button>
+      </form>
+      <div class="filters">
+        <label>Plan <select id="plan"><option value="">Not specified</option><option>Basic</option><option>Pro</option><option>Enterprise</option></select></label>
+        <label>Version <input id="version" placeholder="any"></label>
+        <label id="llm-toggle" hidden><input type="checkbox" id="use-llm" checked> Use Claude for wording</label>
+      </div>
+      <div class="examples" id="examples"></div>
+    </div>
+    <div id="results"></div>
+  </section>
+</main>
+<div class="toast" id="toast"></div>
+<script src="/static/js/app.js"></script>
+</body>
+</html>

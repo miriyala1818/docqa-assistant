@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend: run server (http://localhost:8000)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["app.api.server:app", "--host", "127.0.0.1", "--port", "8000"],
+      "cwd": "${workspaceFolder}/backend",
+      "justMyCode": true
+    },
+    {
+      "name": "Tests: unit tests",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/tests/test_core.py",
+      "cwd": "${workspaceFolder}/backend"
+    },
+    {
+      "name": "Tests: API smoke test (server must be running)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/tests/smoke_api.py",
+      "args": ["http://127.0.0.1:8000"],
+      "cwd": "${workspaceFolder}/backend"
+    },
+    {
+      "name": "Eval: run evaluation (test split)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "eval.run_eval",
+      "args": ["--split", "test"],
+      "cwd": "${workspaceFolder}/backend"
+    },
+    {
+      "name": "Eval: tune thresholds (dev split)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "eval.tune",
+      "cwd": "${workspaceFolder}/backend"
+    }
+  ]
+}
